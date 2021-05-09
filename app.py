@@ -1,14 +1,13 @@
-from flask import Flask
-from logic import square_of_number_plus_nine
+from flask import Flask, render_template
+
 
 # Create Flask's `app` object
 app = Flask(
     __name__,
-    instance_relative_config=False,
-    template_folder="templates",
-    static_folder="static"
+    template_folder="templates"
 )
+
 
 @app.route("/")
 def hello():
-    return "Hello World!"
+    return render_template("index.html")
